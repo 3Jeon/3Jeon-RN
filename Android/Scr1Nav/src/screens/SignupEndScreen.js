@@ -13,12 +13,12 @@ import {
 const SignupEndScreen = ({navigation}) => {
   return (
     <SafeAreaView>
-      <View style = {styles.textContainer}>
-        <Text style = {styles.text}>회원가입 완료</Text>
-      </View>
-
       <View style = {styles.checkContainer}>
         <Text style={styles.check}>✓</Text>
+      </View>
+
+      <View style = {styles.textContainer}>
+        <Text style = {styles.text}>회원가입 완료</Text>
       </View>
 
       <View style = {styles.buttonContainer}>
@@ -35,9 +35,18 @@ const SignupEndScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
 
+  checkContainer : {
+    alignItems : 'center',
+    marginTop : 150
+  },
+
+  check : {
+    color : 'black',
+    fontSize : 150,
+  },
   textContainer : {
     alignItems : 'center',
-    marginTop : 80
+    marginTop : 10
   },
 
   text : {
@@ -46,19 +55,8 @@ const styles = StyleSheet.create({
     fontSize : 28
   },
 
-  
-  checkContainer : {
-    alignItems : 'center',
-    marginTop : 100
-  },
-
-  check : {
-    color : 'black',
-    fontSize : 150,
-  },
-
   buttonContainer : {
-    marginTop : 150,
+    marginTop : 170,
     alignItems : 'center'
   },
 
