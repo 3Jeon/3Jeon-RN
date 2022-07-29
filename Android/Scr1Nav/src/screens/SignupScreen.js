@@ -107,6 +107,7 @@ const SignupScreen = ({navigation}) => {
       <View style = {styles.finContainer}>
         <TouchableOpacity 
           style = {styles.finbutton}
+          onPress = {() => navigation.navigate('SignupEnd')}
         >
             <Text style = {styles.finbuttonText}>회원가입</Text>
         </TouchableOpacity>

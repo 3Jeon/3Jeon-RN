@@ -59,6 +59,7 @@ const LoginScreen = ({navigation}) => {
 
           <TouchableOpacity 
             style = {styles.helpTextGap}
+            onPress = {() => navigation.navigate('Signup')}
           >
             <Text style = {styles.helpText}> 회원가입</Text>
           </TouchableOpacity>

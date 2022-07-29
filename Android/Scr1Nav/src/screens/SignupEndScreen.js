@@ -10,7 +10,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const SignUpEndScreen = ({navigation}) => {
+const SignupEndScreen = ({navigation}) => {
   return (
     <SafeAreaView>
       <View>
@@ -27,6 +27,7 @@ const SignUpEndScreen = ({navigation}) => {
       <View style = {styles.buttonContainer}>
         <TouchableOpacity
           style = {styles.button}
+          onPress = {() => navigation.navigate('Login')}
         >
           <Text style = {styles.buttonText}>확인</Text>
         </TouchableOpacity>
@@ -74,4 +75,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SignUpEndScreen;
+export default SignupEndScreen;
