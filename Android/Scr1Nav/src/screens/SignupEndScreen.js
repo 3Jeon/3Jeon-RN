@@ -13,15 +13,12 @@ import {
 const SignupEndScreen = ({navigation}) => {
   return (
     <SafeAreaView>
-      <View>
-        <Image
-          source = {{uri : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqn9AKVfM8wfpsY8ujQjp3Ee9-qgiN7A7RbA&usqp=CAU"}}
-          style = {styles.image}
-        />
-      </View>
-      
       <View style = {styles.textContainer}>
         <Text style = {styles.text}>회원가입 완료</Text>
+      </View>
+
+      <View style = {styles.checkContainer}>
+        <Text style={styles.check}>✓</Text>
       </View>
 
       <View style = {styles.buttonContainer}>
@@ -37,22 +34,27 @@ const SignupEndScreen = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  image : {
-    width : '50%',
-    height : 100,
-    marginTop : 250,
-    marginLeft : 110
-  },
 
   textContainer : {
     alignItems : 'center',
-    marginTop : 30
+    marginTop : 80
   },
 
   text : {
     color : 'black',
     fontWeight : 'bold',
-    fontSize : 25
+    fontSize : 28
+  },
+
+  
+  checkContainer : {
+    alignItems : 'center',
+    marginTop : 100
+  },
+
+  check : {
+    color : 'black',
+    fontSize : 150,
   },
 
   buttonContainer : {
