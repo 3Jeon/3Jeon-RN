@@ -7,7 +7,8 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View
+  View,
+  Image
 } from 'react-native';
 
 const LoginScreen = ({navigation}) => {
