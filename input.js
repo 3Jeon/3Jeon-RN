@@ -16,8 +16,7 @@ class Input extends Component {
     });
   };
   
-  
-  render() {
+  render(){
     return (
       <View style={styles.mainVeiw}>
         <TextInput
