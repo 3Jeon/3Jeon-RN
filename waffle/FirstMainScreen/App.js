@@ -17,15 +17,12 @@ const App: () => Node =() =>{
     return (
       <SafeAreaView>
         <View style={styles.titlecontainer}>
-          <View style={styles.address}>
-            <Text style ={styles.addressText}>길음동</Text>
-          </View>
-          <TouchableOpacity style={styles.mypage}>
-            <Text style ={styles.mypageText}>내 정보</Text>
+          <TouchableOpacity style={styles.address}>
+            <Text style ={styles.addressText}>안암동</Text>
           </TouchableOpacity>
-          <View style={styles.icon}>
-            <Text style ={styles.iconText}>|</Text>
-          </View>
+          <TouchableOpacity style={styles.toggle}>
+            <Text style ={styles.toggleText}>▾</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={styles.logout}>
             <Text style ={styles.logoutText}>로그아웃</Text>
           </TouchableOpacity>
@@ -33,9 +30,8 @@ const App: () => Node =() =>{
 
         <View>
           <View style={styles.typeTitle}>
-            <Text style ={styles.typeText}>지금 먹고 싶은 음식 종류는?</Text></View>
-          <View style={styles.oneTitle}>
-            <Text style={styles.oneText}>하나만 선택하세요!</Text></View>
+            <Text style ={styles.typeText}>지금 먹고 싶은 음식 종류는 무엇인가요? 👀</Text></View>
+          <View style={styles.bubbleTitle}></View>
         </View>
 
         <View>
@@ -43,21 +39,24 @@ const App: () => Node =() =>{
           <View style={styles.content}>
           <View>
             <TouchableOpacity style={styles.food}><Text style={styles.foodText}>한식</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.food}><Text style={styles.foodText}>분식</Text></TouchableOpacity>
             <TouchableOpacity style={styles.food}><Text style={styles.foodText}>양식</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.food}><Text style={styles.foodText}>고기/구이</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.food}><Text style={styles.foodText}>패스트푸드</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.food}><Text style={styles.foodText}>아시안</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.food}><Text style={styles.foodText}>도시락</Text></TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>일식</Text></TouchableOpacity>
           <TouchableOpacity style={styles.food}><Text style={styles.foodText}>치킨</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>도시락</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>디저트</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>피자</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>고기·구이</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>패스트푸드</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>돈가스·회·일식</Text></TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>중식</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>분식</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>카페·디저트</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>찜·탕·찌개</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>족발·보쌈</Text></TouchableOpacity>
           <TouchableOpacity style={styles.food}><Text style={styles.foodText}>야식</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>아시안푸드</Text></TouchableOpacity>
+          <Text style={styles.none}></Text>
         </View>
           </View>
 
@@ -69,99 +68,114 @@ const App: () => Node =() =>{
 const styles = StyleSheet.create({
   titlecontainer: {
     flex:1,
-    marginTop: 40,
-    marginLeft: 20,
-    marginBottom: 20,
+    //marginTop: 20,
+    //marginLeft: 16,
+    marginBottom: 43.06,
     flexDirection:'row',
   },
   address:{
     //backgroundColor:"#7cb48f",
-    width: DeviceWidth*0.58,
-    marginRight:30,
-    height:30,
+    height:29,
+    width:52,
+    marginTop: 34,
+    marginLeft:15.8,
     justifyContent: 'center',
   },
-  mypage:{
-    //backgroundColor:"yellow",
-    width: 40,
-    height:30,
-    alignItems:'center',
-    justifyContent: 'center',
-  },
-  icon:{
+  toggle:{
     //backgroundColor:"#7cb48f",
-    width: 10,
-    height:30,
-    alignItems:'center',
+    height:29,
+    width:20,
+    marginTop:34,
     justifyContent: 'center',
+    alignItems:'center'
   },
   logout:{
     //backgroundColor:"pink",
-    width:40,
-    height:30,
-    marginRight:30,
+    width:49,
+    height:22,
+    marginLeft:216.96,
+    marginTop: 36.5,
     alignItems:'center',
     justifyContent: 'center',
   },
   addressText:{
-    color:'black',
-    fontSize: 18,
+    color:'#000000',
+    fontSize: 17,
     fontWeight: 'bold'
   },
-  mypageText:{
-    color:'black',
-    fontSize: 10,
-  },
-  iconText:{
-    color: 'black',
-    fontSize: 10
+  toggleText:{
+    color:'#24292E',
+    fontSize: 17,
+    fontWeight: 'bold'
   },
   logoutText:{
-    color:'black',
-    fontSize: 10
-  },
-  typeTitle: {
-    marginTop:45,
-    marginLeft:20,
-    marginBottom:40,
-  },
-  typeText:{
-    color: 'black',
-    fontSize:22,
+    color:'#949494',
+    fontSize: 11,
     fontWeight: 'bold'
   },
-  oneTitle: {
-    flexDirection:'row',
-    marginTop:8,
-    marginLeft:20,
+  typeTitle: {
+    marginTop:43.06,
+    marginLeft:16.4,
+    marginRight:16.6,
+    width:342,
+    height:70,
+    alignItems:'center',
+    justifyContent:'center',
+    borderRadius:12,
+    backgroundColor: '#2A2A2A'
   },
-  oneText:{
-    color: 'black',
-    fontSize:15
+  bubbleTitle:{
+    width: 0,
+    height: 0,
+    borderLeftWidth: 6,
+    borderRightWidth: 6,
+    borderTopWidth: 12,
+    borderStyle: 'solid',
+    backgroundColor: 'transparent',
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderTopColor: '#2A2A2A',
+    marginLeft:'45%',
+    marginBottom:47.56,
+  },
+  typeText:{
+    color: 'white',
+    fontSize:18,
+    fontWeight: 'bold',
+    //fontFamily:'Pretendard-Regular'
   },
   content:{
     flexDirection:'row',
-    marginTop:30,
-    marginLeft:15,
-    width:'90%',
-    height:'65%',
-    alignItems: 'center',
+    marginLeft:11.87,
+    marginRight:16.87,
+    width:341.27,
+    height:390,
+    //alignItems: 'center',
     justifyContent: 'center',
     //backgroundColor: '#d6ca1a',
   },
   food:{
-    width: DeviceWidth*0.27,
-    height: DeviceWidth*0.17,
-    marginBottom:7,
-    marginLeft:7,
+    width: 107.09,
+    height: 70,
+    marginBottom:10,
+    marginLeft:10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#E2E2E2',
+    backgroundColor: '#EFEFEF',
+    borderRadius:10,
   },
   foodText:{
-    color:'black',
-    fontSize:20
-  }
+    color:'#2A2A2A',
+    fontSize:16,
+  },
+  none:{
+    width: 107.09,
+    height: 70,
+    marginBottom:8,
+    marginLeft:8,
+    borderRadius:12,
+    //backgroundColor: '#F5F5F5',
+  },
 });
 
 export default App;
