@@ -10,264 +10,293 @@ import {
   Dimensions,
   Image
 } from 'react-native';
+import { RotateInDownLeft } from 'react-native-reanimated';
 
 const DeviceWidth=Dimensions.get('window').width
 
 const App: () => Node =() =>{
     return (
       <SafeAreaView>
-        <View style={styles.titlecontainer}>
-          <Text style ={styles.titleText}>BBQ 강북스타 삼양점</Text>
+        <View style = {styles.title}>
+        <TouchableOpacity>
+          <Image style = {styles.backStyle} source = {require('./img/back.png')} />
+        </TouchableOpacity>
+        <View style = {styles.name}>
+          <Text style = {styles.nameText}>비교하기</Text>
         </View>
+      </View>
 
-        <View>
+      <View style = {styles.line}>
+        <Image source = {require('./img/line.png')} />
+      </View>
+
+        <View style ={styles.contain}>
           <View style={styles.priceTitle}>
-            <Text style ={styles.priceText}>음식값: 40,000원</Text></View>
-          <View style={styles.distanceTitle}>
-            <Text style={styles.distanceText}>내 위치와의 거리: 12.5km</Text></View>
+            <Text style ={styles.priceText}>배달팁</Text></View>
+          <View style={styles.taketimeTitle}>
+            <Text style={styles.taketimeText}>예상 소요시간</Text></View>
         </View>
 
         <View>
           <View style={styles.content1}>
-            <View style={styles.delivery}>
-              <Text style={styles.deliveryText}>배달</Text></View>
-            <View style={styles.totalprice}>
-              <Text style={styles.totalpriceText}>총 금액: 13,000원</Text></View>
             <View style={styles.app}>
             <TouchableOpacity>
-              <Image style={{width:45, height: 45}}
-              source={require('./img/yogiyo.png')}/>
-            </TouchableOpacity>
-            <View style={styles.icon}></View>
-            <TouchableOpacity>
-              <Image style={{width:45, height: 45}}
+              <Image style={{width:50, height: 50, borderWidth:1, borderColor:'#EFEFEF', borderRadius:5}}
               source={require('./img/baemin.png')}/>
             </TouchableOpacity>
             </View>
-          </View>
-
-          <View style={styles.timecontent1}>
-            <Text style={styles.timeText}>소요시간: 10분</Text>
+            <View style={styles.tip1}>
+              <Text style={styles.tipText}>3,000원</Text></View>
+            <View style={styles.time1}>
+              <Text style={styles.timeText}>약 60분</Text></View>
           </View>
         </View>
 
 
         <View>
           <View style={styles.content2}>
-            <View style={styles.wrap}>
-              <Text style={styles.wrapText}>포장</Text></View>
-            <View style={styles.totalprice2}>
-              <Text style={styles.totalpriceText}>총 금액: 12,000원</Text></View>
-          </View>
-
-          <View style={styles.timecontent2}>
-            <Text style={styles.timeText}>소요시간: 20분</Text>
-          </View>
-
-          <View style={styles.app2}>
-          <TouchableOpacity>
-            <Image style={{width:45, height: 45}}
-            source={require('./img/drive.png')}/>
-          </TouchableOpacity>
-          <View style={styles.icon}></View>
-          <TouchableOpacity>
-            <Image style={{width:45, height: 45}}
-            source={require('./img/trans.png')}/>
-          </TouchableOpacity>
-          <View style={styles.icon}></View>
-          <TouchableOpacity>
-            <Image style={{width:45, height: 45}}
-            source={require('./img/walk.png')}/>
-          </TouchableOpacity>
+            <View style={styles.app2}>
+            <TouchableOpacity>
+              <Image style={{width:50, height: 50, borderWidth:1, borderColor:'#EFEFEF', borderRadius:5}}
+              source={require('./img/coupangeats.png')}/>
+            </TouchableOpacity>
+            <Image style={{width:28.07, height: 28.07}} source={require('./img/star.png')}/>
+            </View>
+            <View style={styles.tip2}>
+              <Text style={{color:'#FF834E', fontSize:16}}>2,500원</Text></View>
+            <View style={styles.time2}>
+              <Text style={{color:'#FF834E', fontSize:16}}>약 30분</Text></View>
           </View>
         </View>
-
 
         <View>
           <View style={styles.content3}>
-            <View style={styles.eatout}>
-              <Text style={styles.eatoutText}>외식</Text></View>
-            <View style={styles.totalprice3}>
-              <Text style={styles.totalpriceText}>총 금액: 10,000원</Text></View>
-          </View>
-
-          <View style={styles.timecontent3}>
-            <Text style={styles.timeText}>소요시간: 30분</Text>
-          </View>
-
-          <View style={styles.app3}>
-          <TouchableOpacity>
-            <Image style={{width:45, height: 45}}
-            source={require('./img/drive.png')}/>
-          </TouchableOpacity>
-          <View style={styles.icon}></View>
-          <TouchableOpacity>
-            <Image style={{width:45, height: 45}}
-            source={require('./img/trans.png')}/>
-          </TouchableOpacity>
-          <View style={styles.icon}></View>
-          <TouchableOpacity>
-            <Image style={{width:45, height: 45}}
-            source={require('./img/walk.png')}/>
-          </TouchableOpacity>
+            <View style={styles.app3}>
+            <TouchableOpacity>
+              <Image style={{width:50, height: 50, borderWidth:1, borderColor:'#EFEFEF', borderRadius:5}}
+              source={require('./img/yogiyo.png')}/>
+            </TouchableOpacity>
+            </View>
+            <View style={styles.tip3}>
+              <Text style={styles.tipText}>3,000원</Text></View>
+            <View style={styles.time3}>
+              <Text style={styles.timeText}>약 60분</Text></View>
           </View>
         </View>
+
+        <View>
+          <View style={styles.content4}>
+            <View style={styles.app4}>
+            <TouchableOpacity>
+              <Image style={{width:50, height: 50}}
+              source={require('./img/wrap.png')}/>
+            </TouchableOpacity>
+            </View>
+            <View style={styles.tip4}>
+              <Text style={styles.tipText}>0원</Text></View>
+            <View style={styles.time4}>
+              <Text style={styles.timeText}>편도 약 20분</Text></View>
+          </View>
+        </View>
+
+        <View>
+        {/* <View style={styles.content5}> */}
+          <View style={styles.bubbleTitle}></View>
+          <View style={styles.CO2}>
+            <Text style={styles.CO2Text}>약 369g 이산화탄소 절감!</Text></View>
+        </View>
+        {/* </View> */}
+
       </SafeAreaView>
     );
   };
 
 const styles = StyleSheet.create({
-  titlecontainer: {
-    alignItems:'center',
-    marginTop: 25
+  title : {
+    flexDirection : 'row',
+    marginTop : '5%',
+    marginLeft : '1%'
   },
-  titleText:{
-    color:'black',
-    fontSize: 20,
-    fontWeight: 'bold'
+  backStyle : {
+    resizeMode : 'contain',
+    width : 24,
+    height : 23
+  },
+  name : {
+    marginLeft : '30%',
+  },
+  nameText : {
+    fontSize : 16,
+    color : 'black',
+    fontWeight:'bold'
+  },
+  line : {
+    marginTop : '3%'
+  },
+
+  contain:{
+    //backgroundColor:"#7cb48f",
+    flexDirection:'row',
+    height:41.52,
+    width:375,
+    justifyContent:'center'
   },
   priceTitle: {
-    flexDirection:'row',
-    marginTop:10,
-    marginLeft:10,
+    marginTop:11.09,
+    marginLeft:137.54,
+    marginRight:81.96,
+    //backgroundColor:'pink'
   },
   priceText:{
-    color: 'black',
-    fontSize:13
+    color: '#949494',
+    fontSize:14
   },
-  distanceTitle: {
-    flexDirection:'row',
-    marginTop:8,
-    marginLeft:10,
+  taketimeTitle: {
+    marginTop:11.09,
+    marginRight:41.5,
+    //backgroundColor:'pink'
   },
-  distanceText:{
-    color: 'black',
-    fontSize:13
+  taketimeText:{
+    color: '#949494',
+    fontSize:14
   },
 
 
   content1:{
-    marginTop:60,
-    //backgroundColor:"#7cb48f",
+    marginTop:8.43,
+    backgroundColor:"#F5F5F5",
     flexDirection:'row',
-    marginLeft:10,
-    height:60
-  },
-  delivery:{
-    //backgroundColor:"pink",
-    width: DeviceWidth*0.15,
-    marginRight:30,
-    height:40,
-    justifyContent:'center',
-  },
-  totalprice:{
-    //backgroundColor: "#E2E2E2", 
-    height: 30,
-    //alignItems:'center',
-    justifyContent: 'center'
+    alignItems:'center',
+    height:80,
+    width:375
   },
   app:{
     //backgroundColor: "yellow",
-    flexDirection:'row',
-    width:125,
-    height:30,
-    marginRight:30,
-    alignItems:'center',
-    justifyContent: 'center',
+    marginLeft:10.33,
+    marginRight:68.2
   },
-  timecontent1:{
-    //backgroundColor:'green',
-    marginLeft:100,
-    height:80
+  tip1:{
+    //backgroundColor:"pink",
+    marginRight:83.96,
+    justifyContent:'center',
   },
-  icon:{
-    width:15
+  time1:{
+    //backgroundColor: "#E2E2E2",
+    justifyContent: 'center'
   },
 
   content2:{
-    //backgroundColor:"#ffa500",
+    //backgroundColor:"#F5F5F5",
     flexDirection:'row',
-    marginLeft:10,
-    height:60
-  },
-  wrap:{
-    //backgroundColor:"pink",
-    width: DeviceWidth*0.15,
-    marginRight:30,
-    height:40,
-    justifyContent:'center',
-  },
-  totalprice2:{
-    //backgroundColor: "#E2E2E2",
-    height: 30,
-    //alignItems:'center',
-    justifyContent: 'center'
-  },
-  timecontent2:{
-    //backgroundColor:'green',
-    marginLeft:100,
-    height:40
+    alignItems:'center',
+    height:80,
+    width:375
   },
   app2:{
-    //backgroundColor:'#e2e2e2',
+    //backgroundColor: "yellow",
+    marginLeft:10.33,
+    marginRight:67.7,
     flexDirection:'row',
-    marginLeft:200,
-    height:60
+  },
+  star:{
+    marginTop:0.96,
+    marginLeft:55.03,
+    marginBottom:50.96,
+  },
+  tip2:{
+    //backgroundColor:"pink",
+    marginRight:83.96,
+    justifyContent:'center',
+  },
+  time2:{
+    //backgroundColor: "#E2E2E2",
+    justifyContent: 'center'
   },
 
   content3:{
-    //backgroundColor:"#ffa500",
+    backgroundColor:"#F5F5F5",
     flexDirection:'row',
-    marginLeft:10,
-    height:60
-  },
-  eatout:{
-    //backgroundColor:"pink",
-    width: DeviceWidth*0.15,
-    marginRight:30,
-    height:40,
-    justifyContent:'center',
-  },
-  totalprice3:{
-    //backgroundColor: "#E2E2E2",
-    height: 30,
-    //alignItems:'center',
-    justifyContent: 'center'
-  },
-  timecontent3:{
-    //backgroundColor:'green',
-    marginLeft:100,
-    height:40
+    alignItems:'center',
+    height:80,
+    width:375
   },
   app3:{
-    //backgroundColor:'#FFA500',
-    flexDirection:'row',
-    marginLeft:200,
-    height:40
+    //backgroundColor: "yellow",
+    marginLeft:10.33,
+    marginRight:68.54
+  },
+  tip3:{
+    //backgroundColor:"pink",
+    marginRight:83.96,
+    justifyContent:'center',
+  },
+  time3:{
+    //backgroundColor: "#E2E2E2",
+    justifyContent: 'center'
   },
 
-  deliveryText:{
-    color:'black',
-    fontSize:30,
-    fontWeight: 'bold'
+  content4:{
+    //backgroundColor:"#F5F5F5",
+    flexDirection:'row',
+    alignItems:'center',
+    height:80,
+    width:375
   },
-  totalpriceText:{
-    color:'black',
-    fontSize:20
+  app4:{
+    //backgroundColor: "yellow",
+    marginLeft:10.33,
+    marginRight:85
+  },
+  tip4:{
+    //backgroundColor:"pink",
+    marginRight: 81.96,
+    justifyContent:'center',
+  },
+  time4:{
+    //backgroundColor: "#E2E2E2",
+    justifyContent: 'center'
+  },
+
+  tipText:{
+    color:'#111111',
+    fontSize:16,
   },
   timeText:{
-    color:'black',
-    fontSize:20
+    color:'#111111',
+    fontSize:16
   },
-  wrapText:{
-    color:'black',
-    fontSize:30,
-    fontWeight: 'bold'
+
+  content5:{
+    backgroundColor:"#F5F5F5",
+    flexDirection:'row',
+    alignItems:'center',
   },
-  eatoutText:{
-    color:'black',
-    fontSize:30,
-    fontWeight: 'bold'
+  bubbleTitle:{
+    width: 0,
+    height: 0,
+    borderLeftWidth: 3,
+    borderRightWidth: 3,
+    borderBottomWidth: 6,
+    borderStyle: 'solid',
+    backgroundColor: 'transparent',
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderBottomColor: '#FF834E',
+    marginLeft:31.78,
+    //marginBottom:55,
+  },
+  CO2:{
+    width:171,
+    height:44,
+    backgroundColor:'#FF834E',
+    borderRadius:6,
+    marginLeft:21,
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  CO2Text:{
+    color:'white',
+    fontSize:14
   }
 });
 
