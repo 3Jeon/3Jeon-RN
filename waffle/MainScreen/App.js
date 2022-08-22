@@ -48,7 +48,7 @@ const App: () => Node =() =>{
             <View style={styles.tip1}>
               <Text style={styles.tipText}>3,000원</Text></View>
             <View style={styles.time1}>
-              <Text style={styles.timeText}>약 60분</Text></View>
+              <Text style={styles.timeText}>약 60 분</Text></View>
           </View>
         </View>
 
@@ -60,12 +60,16 @@ const App: () => Node =() =>{
               <Image style={{width:50, height: 50, borderWidth:1, borderColor:'#EFEFEF', borderRadius:5}}
               source={require('./img/coupangeats.png')}/>
             </TouchableOpacity>
-            <Image style={{width:28.07, height: 28.07}} source={require('./img/star.png')}/>
+            </View>
+            <View style={styles.star}>
+            <TouchableOpacity>
+              <Image style={{width:28.07, height: 28.07}} source={require('./img/star.png')}/>
+            </TouchableOpacity>
             </View>
             <View style={styles.tip2}>
-              <Text style={{color:'#FF834E', fontSize:16}}>2,500원</Text></View>
+              <Text style={{color:'#FF834E', fontSize:16, fontWeight:'300'}}>2,500원</Text></View>
             <View style={styles.time2}>
-              <Text style={{color:'#FF834E', fontSize:16}}>약 30분</Text></View>
+              <Text style={{color:'#FF834E', fontSize:16, fontWeight:'300'}}>약 30 분</Text></View>
           </View>
         </View>
 
@@ -80,7 +84,7 @@ const App: () => Node =() =>{
             <View style={styles.tip3}>
               <Text style={styles.tipText}>3,000원</Text></View>
             <View style={styles.time3}>
-              <Text style={styles.timeText}>약 60분</Text></View>
+              <Text style={styles.timeText}>약 60 분</Text></View>
           </View>
         </View>
 
@@ -93,19 +97,19 @@ const App: () => Node =() =>{
             </TouchableOpacity>
             </View>
             <View style={styles.tip4}>
-              <Text style={styles.tipText}>0원</Text></View>
+              <Text style={styles.tipText}>0 원</Text></View>
             <View style={styles.time4}>
-              <Text style={styles.timeText}>편도 약 20분</Text></View>
+              <Text style={styles.timeText}>편도 약 20 분</Text></View>
           </View>
         </View>
 
         <View>
-        {/* <View style={styles.content5}> */}
+        <View style={styles.content5}>
           <View style={styles.bubbleTitle}></View>
           <View style={styles.CO2}>
             <Text style={styles.CO2Text}>약 369g 이산화탄소 절감!</Text></View>
         </View>
-        {/* </View> */}
+        </View>
 
       </SafeAreaView>
     );
@@ -120,10 +124,11 @@ const styles = StyleSheet.create({
   backStyle : {
     resizeMode : 'contain',
     width : 24,
-    height : 23
+    height : 23,
   },
   name : {
-    marginLeft : '30%',
+    position:'absolute',
+    left:159,
   },
   nameText : {
     fontSize : 16,
@@ -131,7 +136,7 @@ const styles = StyleSheet.create({
     fontWeight:'bold'
   },
   line : {
-    marginTop : '3%'
+    marginTop : '3%',
   },
 
   contain:{
@@ -139,31 +144,36 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     height:41.52,
     width:375,
-    justifyContent:'center'
+    justifyContent:'center',
+    alignItems:'center'
   },
   priceTitle: {
-    marginTop:11.09,
-    marginLeft:137.54,
-    marginRight:81.96,
+    position:'absolute',
+    left:137.54,
+    top:11.09,
+    bottom:8.43,
     //backgroundColor:'pink'
   },
   priceText:{
     color: '#949494',
-    fontSize:14
+    fontSize:14,
+    fontWeight:'500',
   },
   taketimeTitle: {
-    marginTop:11.09,
-    marginRight:41.5,
-    //backgroundColor:'pink'
+    //backgroundColor:'pink',
+    position:'absolute',
+    left:256.5,
+    top:11.09,
+    bottom:8.43,
   },
   taketimeText:{
     color: '#949494',
-    fontSize:14
+    fontSize:14,
+    fontWeight:'500',
   },
 
 
   content1:{
-    marginTop:8.43,
     backgroundColor:"#F5F5F5",
     flexDirection:'row',
     alignItems:'center',
@@ -177,12 +187,15 @@ const styles = StyleSheet.create({
   },
   tip1:{
     //backgroundColor:"pink",
-    marginRight:83.96,
     justifyContent:'center',
+    position:'absolute',
+    left:128.54,
   },
   time1:{
     //backgroundColor: "#E2E2E2",
-    justifyContent: 'center'
+    justifyContent: 'center',
+    position:'absolute',
+    left:267.5,
   },
 
   content2:{
@@ -196,20 +209,23 @@ const styles = StyleSheet.create({
     //backgroundColor: "yellow",
     marginLeft:10.33,
     marginRight:67.7,
-    flexDirection:'row',
   },
   star:{
-    marginTop:0.96,
-    marginLeft:55.03,
-    marginBottom:50.96,
+    position:"absolute",
+    bottom:50.96,
+    left:55.03,
+    right:50.96
   },
   tip2:{
     //backgroundColor:"pink",
-    marginRight:83.96,
     justifyContent:'center',
+    position:'absolute',
+    left:128.04,
   },
   time2:{
     //backgroundColor: "#E2E2E2",
+    position:'absolute',
+    left:267.5,
     justifyContent: 'center'
   },
 
@@ -227,12 +243,15 @@ const styles = StyleSheet.create({
   },
   tip3:{
     //backgroundColor:"pink",
-    marginRight:83.96,
+    position:'absolute',
+    left:128.87,
     justifyContent:'center',
   },
   time3:{
     //backgroundColor: "#E2E2E2",
-    justifyContent: 'center'
+    justifyContent: 'center',
+    position:'absolute',
+    left:267.5,
   },
 
   content4:{
@@ -249,12 +268,15 @@ const styles = StyleSheet.create({
   },
   tip4:{
     //backgroundColor:"pink",
-    marginRight: 81.96,
+    position:'absolute',
+    left:142.04,
     justifyContent:'center',
   },
   time4:{
     //backgroundColor: "#E2E2E2",
-    justifyContent: 'center'
+    justifyContent: 'center',
+    position:'absolute',
+    left:252
   },
 
   tipText:{
@@ -266,11 +288,6 @@ const styles = StyleSheet.create({
     fontSize:16
   },
 
-  content5:{
-    backgroundColor:"#F5F5F5",
-    flexDirection:'row',
-    alignItems:'center',
-  },
   bubbleTitle:{
     width: 0,
     height: 0,
@@ -292,11 +309,11 @@ const styles = StyleSheet.create({
     borderRadius:6,
     marginLeft:21,
     alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'center',
   },
   CO2Text:{
     color:'white',
-    fontSize:14
+    fontSize:14,
   }
 });
 
