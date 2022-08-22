@@ -282,10 +282,12 @@ const styles = StyleSheet.create({
   tipText:{
     color:'#111111',
     fontSize:16,
+    fontWeight:'300',
   },
   timeText:{
     color:'#111111',
-    fontSize:16
+    fontSize:16,
+    fontWeight:'300',
   },
 
   bubbleTitle:{
@@ -300,7 +302,6 @@ const styles = StyleSheet.create({
     borderRightColor: 'transparent',
     borderBottomColor: '#FF834E',
     marginLeft:31.78,
-    //marginBottom:55,
   },
   CO2:{
     width:171,
@@ -314,6 +315,7 @@ const styles = StyleSheet.create({
   CO2Text:{
     color:'white',
     fontSize:14,
+    fontWeight:'300',
   }
 });
 
