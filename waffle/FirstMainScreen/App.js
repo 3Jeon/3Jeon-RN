@@ -49,7 +49,7 @@ const App: () => Node =() =>{
           <TouchableOpacity style={styles.food}><Text style={styles.foodText}>피자</Text></TouchableOpacity>
           <TouchableOpacity style={styles.food}><Text style={styles.foodText}>고기·구이</Text></TouchableOpacity>
           <TouchableOpacity style={styles.food}><Text style={styles.foodText}>패스트푸드</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.food}><Text style={styles.foodText}>돈가스·회·일식</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.food}><Text style={{color:'#2A2A2A',fontSize:14,fontWeight:'300',lineHeight:22,}}>돈가스·회·일식</Text></TouchableOpacity>
         </View>
         <View>
           <TouchableOpacity style={styles.food}><Text style={styles.foodText}>카페·디저트</Text></TouchableOpacity>
@@ -67,56 +67,55 @@ const App: () => Node =() =>{
 
 const styles = StyleSheet.create({
   titlecontainer: {
-    flex:1,
-    //marginTop: 20,
-    //marginLeft: 16,
-    marginBottom: 43.06,
     flexDirection:'row',
   },
   address:{
     //backgroundColor:"#7cb48f",
     height:29,
-    width:52,
-    marginTop: 34,
-    marginLeft:15.8,
+    position:'absolute',
+    left:15.8,
+    top:14,
     justifyContent: 'center',
+    alignItems:'center'
   },
   toggle:{
     //backgroundColor:"#7cb48f",
     height:29,
-    width:20,
-    marginTop:34,
+    position:'absolute',
+    left:76.9,
+    top:14,
     justifyContent: 'center',
     alignItems:'center'
   },
   logout:{
     //backgroundColor:"pink",
-    width:49,
-    height:22,
-    marginLeft:216.96,
-    marginTop: 36.5,
+    position:'absolute',
+    left:309.94,
+    top:17.5,
     alignItems:'center',
     justifyContent: 'center',
   },
   addressText:{
     color:'#000000',
-    fontSize: 17,
-    fontWeight: 'bold'
+    fontSize: 20,
+    fontWeight: '600'
   },
   toggleText:{
     color:'#24292E',
     fontSize: 17,
-    fontWeight: 'bold'
+    fontWeight: '600'
   },
   logoutText:{
     color:'#949494',
-    fontSize: 11,
-    fontWeight: 'bold'
+    fontSize: 14,
+    lineHeight:22,
+    fontWeight: '300'
   },
   typeTitle: {
-    marginTop:43.06,
-    marginLeft:16.4,
-    marginRight:16.6,
+    position:'absolute',
+    top:82.06,
+    left:16.4,
+    right:16.6,
     width:342,
     height:70,
     alignItems:'center',
@@ -135,22 +134,25 @@ const styles = StyleSheet.create({
     borderLeftColor: 'transparent',
     borderRightColor: 'transparent',
     borderTopColor: '#2A2A2A',
-    marginLeft:'45%',
-    marginBottom:47.56,
+    position:'absolute',
+    left:179.69,
+    top:146.33,
   },
   typeText:{
-    color: 'white',
-    fontSize:18,
-    fontWeight: 'bold',
-    //fontFamily:'Pretendard-Regular'
+    color: '#FFFFFF',
+    position:'absolute',
+    fontSize:17,
+    fontWeight: '600',
+    lineHeight:28
   },
   content:{
     flexDirection:'row',
-    marginLeft:11.87,
-    marginRight:16.87,
+    position:'absolute',
+    left:11.87,
+    top:209.5,
+    bottom:168.5,
     width:341.27,
     height:390,
-    //alignItems: 'center',
     justifyContent: 'center',
     //backgroundColor: '#d6ca1a',
   },
@@ -167,6 +169,8 @@ const styles = StyleSheet.create({
   foodText:{
     color:'#2A2A2A',
     fontSize:16,
+    fontWeight:'300',
+    lineHeight:24,
   },
   none:{
     width: 107.09,
